@@ -1,0 +1,16 @@
+{
+				"cities": [
+					{
+						"title": "Nahapa",
+						"lat": "22.476535393799885",
+						"lng": "72.91490256786346",
+						"info": "Write something here"
+					},
+					{
+						"title": "Khambhat",
+						"lat": "22.31550151087173",
+						"lng": "72.62429594993591",
+						"info": "Write something here"
+					}
+				]
+			}
