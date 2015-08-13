@@ -6,8 +6,7 @@
 	<meta charset="utf-8" />
 
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-	<link rel="stylesheet" href="leaflet.css" />
+	<link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.css" />
 
 	<style>
 		#map {
@@ -45,9 +44,9 @@
 <body>
 	<div id="map"></div>
 
-	<script src="leaflet.js"></script>
+	<script src="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.js"></script>
 
-	<script type="text/javascript" src="us-states.js"></script>
+	<script type="text/javascript" src="Gujrat.js"></script>
 	<script type="text/javascript">
 
 //		var map = L.map('map').setView([22, 72], 7);
@@ -79,8 +78,6 @@ var mbUrl = 'https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token=p
 //			attribution: ,
 //			id: 'mapbox.pirates'
 //		}).addTo(map);
-
-
 		// control that shows state info on hover
 		var info = L.control();
 
@@ -148,8 +145,13 @@ var mbUrl = 'https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token=p
 
 		function zoomToFeature(e) {
 			map.fitBounds(e.target.getBounds());
+			console.log(e.target.feature.id);  //access id for districts
+			loadCities(e.target.feature.id);
 		}
-
+		
+		function loadCities(city_id){
+		console.log(city_id);
+		}
 		function onEachFeature(feature, layer) {
 			layer.on({
 				mouseover: highlightFeature,
